@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Create New Item</title>
+  </head>
+  <body>
+    <h1>Create New Item</h1>
+    <form action="/items/<%= categoryId ? categoryId : '' %>" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="description">Description:</label>
+      <textarea id="description" name="description"></textarea>
+
+      <label for="price">Price:</label>
+      <input type="number" id="price" name="price" step="0.01" required>
+
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" name="quantity" required>
+
+      <label for="category">Category:</label>
+      <select id="category" name="categoryId">
+        <% categories.forEach(cat => { %>
+          <option value="<%= cat.id %>" <%= categoryId && cat.id == categoryId ? 'selected' : '' %>>
+            <%= cat.name %>
+          </option>
+        <% }) %>
+      </select>
+
+      <button type="submit">Create Item</button>
+    </form>
+  </body>
+</html>

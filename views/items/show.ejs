@@ -10,5 +10,16 @@
   <p>Description: <%= item.description %></p>
   <p>Price: $<%= item.price %></p>
   <p>Quantity: <%= item.quantity %></p>
+
+  <ul>
+    <li><a href="/items/<%= item.id %>/edit">Edit Item</a></li>
+    <li><a href="/items">View All Items</a></li>
+    <li><a href="/items/new">Create New Item</a></li>
+    <li><a href="/">Return to Home</a></li>
+  </ul>
+
+  <form action="/items/<%= item.id %>?_method=DELETE" method="POST">
+    <button type="submit">Delete Item</button>
+  </form>
 </body>
 </html>
