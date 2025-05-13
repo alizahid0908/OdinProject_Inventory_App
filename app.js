@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import categoriesRoutes from './routes/categoryRoutes.js';
 import itemsRoutes from './routes/itemRoutes.js';
 import methodOverride from 'method-override';
+import { checkAdminPassword } from './middleware.js';
 
 dotenv.config();
 

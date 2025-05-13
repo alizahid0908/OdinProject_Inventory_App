@@ -3,6 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <title>Edit Item</title>
+            <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
   </head>
   <body>
     <h1>Edit Item</h1>
@@ -27,6 +62,9 @@
           </option>
         <% }) %>
       </select>
+
+      <label for="adminPassword">Admin Password:</label>
+      <input type="password" id="adminPassword" name="adminPassword" required>
 
       <button type="submit">Update Item</button>
     </form>
